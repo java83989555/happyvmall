@@ -1,11 +1,11 @@
 const path            = require('path');
 var webpack           = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");//生成独立的css
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 // 环境变量的配置 dev/online
 var WEBPACK_ENV       = process.env.WEBPACK_ENV||'dev';
-console.log('当前开发环境:'+WEBPACK_ENV);
-
+console.log('当前环境:'+WEBPACK_ENV);
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig =function (name) {
   return {
@@ -23,22 +23,24 @@ var config = {
       'common':['./src/page/common/index.js'],
       'index':['./src/page/index/index.js'],
       'login':['./src/page/login/index.js'],
-  },
+    },
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist',
         filename: 'js/[name].js'
     },
+    devtool: 'eval-source-map',
     externals: {
-      'jquery':'window.jQuery'
+        'jquery':'window.jQuery'
     },
     module: {
       loaders : [
-      {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader")},
-      {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=/resource/[name].[ext]'},
-    ]
+        {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader")},
+        {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=/resource/[name].[ext]'},
+      ]
     },
     plugins:  [
+      new webpack.BannerPlugin('版权所有，翻版必究'),
       // 独立通用模块的插件到js/base.js
       new webpack.optimize.CommonsChunkPlugin({
           name: "common",

@@ -1,3 +1,5 @@
+/*! 版权所有，翻版必究 */
 body {
-  background-image: url(resource/test-image.jpg);
+  background-image: url(/dist/resource/test-image.jpg);
+  color: green;
 }

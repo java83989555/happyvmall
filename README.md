@@ -50,15 +50,15 @@
     * plugins 插件
 8. webpack loaders 常用的如下
   * html  `html-webpack-plugin/html-loader`
-  * js  `babel-loader`+`babel-preset-es2015`
+  * js  `babel-loader`+`babel-preset-es2015`自然可以使用默认自带的
   * css `style-loader`+`css-loader`
   * image+font  `url-loader`
 9. 常用命令
-  * webpack 以不压缩的形式打包
-  * webpack-p 线上发布时的打包将所有文件都进行最小化的压缩
-  * webpack--watch 监听文件的改变而自动编译开发时常使用
-  * webpack--config webpack.config.js 修改默认配置文件
-  * webpack-dev-server
+  * `webpack` 以不压缩的形式打包
+  * `webpack-p` 线上发布时的打包将所有文件都进行最小化的压缩
+  * `webpack--watch` 监听文件的改变而自动编译开发时常使用
+  * `webpack--config` 修改默认配置文件webpack.config.js
+  * `webpack-dev-server`
     * **前端文件服务器**:启动后可以使用`localhost`形式来访问网页，
     * **特色**:监听文件的改变然后自动刷新浏览器
     * **安装**:`npm install webpack-dev-server --save-dev`需要全局个局部安装，注意选择版本问题
