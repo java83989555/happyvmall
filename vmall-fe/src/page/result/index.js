@@ -7,6 +7,7 @@
 
 'use strict';
 require('./index.css');
+
 require('page/common/nav-simple/index.js');
 var _vm = require('util/vm.js');
 

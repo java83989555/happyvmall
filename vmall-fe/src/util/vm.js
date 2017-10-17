@@ -22,7 +22,7 @@ var _vm = {
           _this.doLogin();
         }
         // 请求数据错误
-        else if (1 === res.status) {
+        else if (-1 === res.status) {
           typeof param.error === 'function' && param.error(res.message);
         }
       },

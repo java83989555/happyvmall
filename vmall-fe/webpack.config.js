@@ -24,7 +24,12 @@ var config = {
   entry: {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
-    'login': ['./src/page/login/index.js'],
+    'user-login': ['./src/page/user-login/index.js'],
+    'user-register': ['./src/page/user-register/index.js'],
+    'user-center': ['./src/page/user-center/index.js'],
+    'user-center-update': ['./src/page/user-center-update/index.js'],
+    'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
+    'user-pass-update': ['./src/page/user-pass-update/index.js'],
     'result': ['./src/page/result/index.js'],
   },
   output: {
@@ -35,6 +40,7 @@ var config = {
   devtool: 'eval-source-map',
   resolve: {
     alias: {
+      node_modules: __dirname + '/node_modules',
       util: __dirname + '/src/util',
       page: __dirname + '/src/page',
       service: __dirname + '/src/service',
@@ -75,7 +81,12 @@ var config = {
     new ExtractTextPlugin("css/[name].css"),
     // html模版到处理
     new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-    new HtmlWebpackPlugin(getHtmlConfig('login','登陆页')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-login','登陆页面')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-register','注册页面')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center-update','用户中心更新')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','用户密码重置')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','用户密码更新')),
     new HtmlWebpackPlugin(getHtmlConfig('result','操作结果页')),
   ],
   devServer: {
