@@ -24,6 +24,9 @@ var config = {
   entry: {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
+    'list': ['./src/page/list/index.js'],
+    'detail': ['./src/page/detail/index.js'],
+    'cart': ['./src/page/cart/index.js'],
     'user-login': ['./src/page/user-login/index.js'],
     'user-register': ['./src/page/user-register/index.js'],
     'user-center': ['./src/page/user-center/index.js'],
@@ -84,11 +87,15 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('user-login','登陆页面')),
     new HtmlWebpackPlugin(getHtmlConfig('user-register','注册页面')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
+    new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
+    new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center-update','用户中心更新')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','用户密码重置')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','用户密码更新')),
     new HtmlWebpackPlugin(getHtmlConfig('result','操作结果页')),
   ],
+  // 代理转发
   devServer: {
     historyApiFallback: true,
     contentBase: "./",

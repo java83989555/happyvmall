@@ -24,6 +24,7 @@ var _cart = {
             url     : _vm.getServerUrl('/api/cart/add'),
             data    : productInfo,
             success : resolve,
+            method    : 'post',
             error   : reject
         });
     },
@@ -32,6 +33,7 @@ var _cart = {
         _vm.request({
             url     : _vm.getServerUrl('/api/cart/list'),
             success : resolve,
+            method    : 'post',
             error   : reject
         });
     },
@@ -42,6 +44,7 @@ var _cart = {
             data    : {
                 productId : productId
             },
+            method    : 'post',
             success : resolve,
             error   : reject
         });
@@ -53,6 +56,7 @@ var _cart = {
             data    : {
                 productId : productId
             },
+            method    : 'post',
             success : resolve,
             error   : reject
         });
@@ -62,6 +66,7 @@ var _cart = {
         _vm.request({
             url     : _vm.getServerUrl('/api/cart/select_all'),
             success : resolve,
+            method    : 'post',
             error   : reject
         });
     },
@@ -70,6 +75,7 @@ var _cart = {
         _vm.request({
             url     : _vm.getServerUrl('/api/cart/un_select_all'),
             success : resolve,
+            method    : 'post',
             error   : reject
         });
     },
@@ -79,6 +85,7 @@ var _cart = {
             url     : _vm.getServerUrl('/api/cart/update'),
             data    : productInfo,
             success : resolve,
+            method    : 'post',
             error   : reject
         });
     },
@@ -89,6 +96,7 @@ var _cart = {
             data    : {
                 productIds : productIds
             },
+            method    : 'post',
             success : resolve,
             error   : reject
         });
